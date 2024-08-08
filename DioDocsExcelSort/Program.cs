@@ -4,19 +4,19 @@ using GrapeCity.Documents.Excel;
 Console.WriteLine("DioDocs for Excelのソート機能");
 
 // 新しいワークブックを作成します
-Workbook workbook = new Workbook();
+Workbook workbook = new();
 
 // Excelファイルを開きます
 workbook.Open("test.xlsx");
 IWorksheet worksheet = workbook.Worksheets[0];
 
 //// C列の値でソートします
-worksheet.Range["A2:F21"].Sort(worksheet.Range["C2:C21"],
-                               orientation: SortOrientation.Columns);
+//worksheet.Range["A2:F21"].Sort(worksheet.Range["C2:C21"],
+//                               orientation: SortOrientation.Columns);
 
-// 複数列（C列、D列）の値でソートします
+// 複数列（C列、F列）の値でソートします
 worksheet.Range["A2:F21"].Sort(
-    SortOrientation.Columns, 
+    SortOrientation.Columns,
     false,
     new ValueSortField[] {
         new(worksheet.Range["C2:C21"], SortOrder.Ascending),
